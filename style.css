@@ -1,12 +1,13 @@
-/* ==============================
-   DESIGN LUXE ET COLORÉ
-   ============================== */
+/* ================================ */
+/* DESIGN LUXE ET COLORÉ – JAPON  */
+/* ================================ */
+
 :root {
     --primary: #bc002d; /* Rouge Japon */
     --dark: #121212;
     --light: #f4f4f4;
     --gold: #d4af37;
-    --accent: #fff0f5;
+    --accent: #2d3436;
 }
 
 * {
@@ -23,9 +24,10 @@ body {
     overflow-x: hidden;
 }
 
-/* ==============================
-   HEADER & VIDEO BACKGROUND
-   ============================== */
+/* ================================ */
+/* HEADER & VIDÉO BACKGROUND        */
+/* ================================ */
+
 .hero {
     height: 100vh;
     position: relative;
@@ -46,7 +48,7 @@ body {
 
 .video-bg iframe {
     width: 100vw;
-    height: 56.25vw;
+    height: 56.25vw; /* Ratio 16:9 */
     min-height: 100vh;
     min-width: 177.77vh;
     position: absolute;
@@ -96,7 +98,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--gold);
+    color: var(--primary);
 }
 
 .hero-title {
@@ -121,37 +123,33 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-.btn-main {
-    background: var(--primary);
-    color: white;
-    padding: 15px 40px;
-    font-weight: 700;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-}
+/* ================================ */
+/* UTILITAIRES & TYPOGRAPHIE        */
+/* ================================ */
 
-.btn-main:hover {
-    background: var(--gold);
-    transform: translateY(-5px);
-}
-
-/* ==============================
-   UTILITAIRES & TYPOGRAPHIE
-   ============================== */
 .section-padding { padding: 100px 5%; }
 .container { max-width: 1200px; margin: auto; }
+
 .big-title {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     margin-bottom: 50px;
     text-align: center;
+    position: relative;
 }
+
+.big-title::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    background: var(--primary);
+    display: block;
+    margin: 15px auto;
+}
+
 .white { color: white; }
-.dark-bg { background: var(--dark); color: white; }
-.accent-bg { background: var(--accent); color: #121212; }
+.dark-bg { background: var(--dark); }
+.accent-bg { background: #fff5f5; }
 
 .text-rich p {
     font-size: 1.25rem;
@@ -159,21 +157,33 @@ nav ul li a:hover {
     text-align: justify;
 }
 
-.text-rich ul {
-    margin-top: 20px;
-    margin-left: 20px;
-    list-style: disc;
-}
+/* ================================ */
+/* GRILLES & IMAGES                 */
+/* ================================ */
 
-/* ==============================
-   GRILLES ET CARTES
-   ============================== */
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
 }
+
+.image-decor, .img-zoom {
+    width: 100%;
+    min-height: 300px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--primary);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+}
+
+.image-decor:hover, .img-zoom:hover { transform: scale(1.05); }
+
+/* ================================ */
+/* CARTES VOYAGE                     */
+/* ================================ */
 
 .card-grid {
     display: grid;
@@ -191,41 +201,21 @@ nav ul li a:hover {
 
 .travel-card:hover { transform: scale(1.05); }
 
-.img-zoom { 
-    overflow: hidden; 
-    height: 250px; 
-    background: #ddd url('https://images.unsplash.com/photo-1557216345-3c2d207f7f4b?auto=format&fit=crop&w=600') center/cover no-repeat;
+.img-zoom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
 }
-.img-zoom img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    transition: 0.5s; 
-}
+
 .travel-card:hover img { transform: scale(1.2); }
 
 .card-info { padding: 25px; }
 
-/* ==============================
-   IMAGE DÉCOR (POUR SECTIONS)
-   ============================== */
-.image-decor {
-    width: 100%;
-    min-height: 300px;
-    background: #ddd url('https://images.unsplash.com/photo-1557216345-3c2d207f7f4b?auto=format&fit=crop&w=800') center/cover no-repeat;
-    border-radius: 20px;
-    box-shadow: 20px 20px 0 var(--primary);
-    transition: transform 0.3s;
-}
-.image-decor img {
-    width: 100%;
-    border-radius: 20px;
-}
-.image-decor:hover { transform: scale(1.05); }
+/* ================================ */
+/* TABLEAUX MODERNES               */
+/* ================================ */
 
-/* ==============================
-   TABLEAUX MODERNES
-   ============================== */
 .modern-table {
     width: 100%;
     border-collapse: collapse;
@@ -245,9 +235,10 @@ nav ul li a:hover {
     border-bottom: 1px solid #ddd;
 }
 
-/* ==============================
-   FORMULAIRE
-   ============================== */
+/* ================================ */
+/* FORMULAIRE DESIGN                 */
+/* ================================ */
+
 .contact-box {
     background: white;
     padding: 50px;
@@ -270,11 +261,28 @@ input, select, textarea {
     border-radius: 8px;
 }
 
-button, .btn-main { cursor: pointer; }
+.btn-main {
+    background: var(--primary);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    display: inline-block;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
 
-/* ==============================
-   FOOTER
-   ============================== */
+.btn-main:hover {
+    background: var(--dark);
+    transform: translateY(-5px);
+}
+
+/* ================================ */
+/* FOOTER                           */
+/* ================================ */
+
 footer {
     background: var(--dark);
     color: white;
@@ -282,21 +290,37 @@ footer {
     padding: 50px;
 }
 
-/* ==============================
-   RESPONSIVE
-   ============================== */
+/* ================================ */
+/* IMAGES SPÉCIALES PAR SECTION      */
+/* ================================ */
+
+/* Pop-Culture & Futurisme */
+.culture-img {
+    background-image: url('https://images.unsplash.com/photo-1611691541060-9c6c282b0e0b?auto=format&fit=crop&w=800'); 
+}
+
+/* Traditions Japonaises */
+.traditions-img {
+    background-image: url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=800'); 
+}
+
+/* Géographie / Carte du Japon */
+.geo-img {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Japan_map_en.svg/1024px-Japan_map_en.svg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ================================ */
+/* RESPONSIVE                        */
+/* ================================ */
+
 @media (max-width: 1024px) {
     .grid-2 { grid-template-columns: 1fr; gap: 30px; }
-    .hero-title h1 { font-size: 4rem; }
 }
 
 @media (max-width: 768px) {
-    .grid-2 { grid-template-columns: 1fr; }
     .hero-title h1 { font-size: 3rem; }
     .input-group { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-    .hero-title h1 { font-size: 2.5rem; }
-    .btn-main { padding: 12px 30px; font-size: 0.9rem; }
 }
