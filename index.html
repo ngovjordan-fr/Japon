@@ -1,232 +1,252 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japon Immersion | Le Guide Ultime</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+/* ======================= RESET ======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
 
-<!-- ======================= HERO ======================= -->
-<header class="hero">
-    <div class="video-bg">
-        <iframe src="https://www.youtube.com/embed/S_dfq9rFWAE?autoplay=1&mute=1&controls=0&loop=1&playlist=S_dfq9rFWAE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-    <div class="hero-overlay">
-        <nav>
-            <div class="logo">NIHON<span>日本</span></div>
-            <ul>
-                <li><a href="#histoire">Histoire</a>
-                    <ul class="submenu">
-                        <li><a href="#prehistoire">Préhistoire</a></li>
-                        <li><a href="#samourai">Ère des Samouraïs</a></li>
-                        <li><a href="#modernite">Modernité</a></li>
-                    </ul>
-                </li>
-                <li><a href="#visites">Destinations</a>
-                    <ul class="submenu">
-                        <li><a href="#tokyo">Tokyo</a></li>
-                        <li><a href="#kyoto">Kyoto</a></li>
-                        <li><a href="#fuji">Mont Fuji</a></li>
-                    </ul>
-                </li>
-                <li><a href="#gastronomie">Gastronomie</a></li>
-                <li><a href="#culture">Culture Geek</a></li>
-                <li><a href="#traditions">Traditions</a></li>
-                <li><a href="#geographie">Géographie</a></li>
-                <li><a href="#contact">Voyager</a></li>
-            </ul>
-        </nav>
-        <div class="hero-title">
-            <h1>L'ÉVASION TOTALE</h1>
-            <p>Plongez dans l'archipel où le futur rencontre l'éternité.</p>
-            <a href="#visites" class="btn-main">Explorer maintenant</a>
-        </div>
-    </div>
-</header>
+/* ======================= BODY & HERO ======================= */
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
 
-<!-- ======================= HISTOIRE ======================= -->
-<section id="histoire" class="section-padding">
-    <div class="container">
-        <h2 class="big-title">Histoire du Japon</h2>
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
 
-        <!-- Préhistoire -->
-        <div id="prehistoire" class="sub-section">
-            <h3>Préhistoire et Jomon</h3>
-            <p>La civilisation Jomon (environ 10 500 – 300 av. J.-C.) est l’une des plus anciennes du Japon. Ils étaient chasseurs-cueilleurs et créaient des poteries complexes à motifs cordés. Les fouilles archéologiques montrent un art et une culture élaborés pour l’époque. Leur mode de vie dépendait fortement de la nature, des rivières et des forêts environnantes. On retrouve encore aujourd’hui des traces de leurs villages dans le nord de Honshu et Hokkaido. L'étude de ces peuples montre l'origine de nombreuses traditions japonaises modernes. Leur spiritualité est le premier lien connu avec les esprits de la nature, les "Kami".</p>
-        </div>
+.video-bg iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
 
-        <!-- Ère des Samouraïs -->
-        <div id="samourai" class="sub-section">
-            <h3>Ère des Samouraïs</h3>
-            <p>Au XIIe siècle, le Japon entre dans l’ère féodale sous le règne des Shoguns. Les Samouraïs deviennent la classe militaire dominante. Leur code d’honneur, le Bushido, dicte loyauté, courage et respect. La vie quotidienne du peuple est strictement régulée par ce système. Les arts martiaux et les cérémonies comme le thé et l’ikebana se développent pour refléter l’esthétique samouraï. Les forteresses et châteaux construits à cette époque restent des monuments emblématiques aujourd’hui. La société se structure autour de ce mélange de discipline et de raffinement culturel.</p>
-        </div>
+.hero-overlay {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding-top: 100px;
+    background: rgba(0,0,0,0.4);
+}
 
-        <!-- Modernité -->
-        <div id="modernite" class="sub-section">
-            <h3>Réforme Meiji et Modernité</h3>
-            <p>En 1868, la restauration Meiji transforme le Japon en puissance moderne. L’économie et l’industrie se développent rapidement. Les samouraïs perdent leur rôle militaire mais leur influence culturelle perdure. Le pays s’ouvre aux innovations occidentales tout en préservant ses traditions. Les villes modernes naissent, les chemins de fer se multiplient et l’éducation devient obligatoire. Cette transition rapide est appelée le "miracle Meiji". Aujourd’hui, le Japon combine infrastructures futuristes et patrimoine historique de manière unique.</p>
-        </div>
-    </div>
-</section>
+/* ======================= NAVIGATION ======================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0,0,0,0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
 
-<!-- ======================= DESTINATIONS ======================= -->
-<section id="visites" class="dark-bg section-padding">
-    <div class="container">
-        <h2 class="big-title white">Destinations Incontournables</h2>
+nav .logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+}
 
-        <!-- Tokyo -->
-        <div id="tokyo" class="sub-section">
-            <h3>Tokyo : La Métropole Électrique</h3>
-            <div class="grid-2">
-                <div class="text-rich white">
-                    <p>Tokyo est une ville qui mélange modernité et tradition. Les néons d’Akihabara attirent les passionnés de technologie et de jeux vidéo. Shibuya offre le célèbre carrefour animé, tandis que les jardins impériaux offrent une parenthèse de calme. Tokyo Tower et Skytree permettent des vues panoramiques spectaculaires. Les festivals traditionnels coexistent avec les événements pop et musicaux. Chaque quartier a son identité unique, rendant la ville fascinante à explorer.</p>
-                </div>
-                <div class="image-decor" style="background-image: url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600');"></div>
-            </div>
-        </div>
+nav .logo span {
+    color: #fdd835;
+}
 
-        <!-- Kyoto -->
-        <div id="kyoto" class="sub-section">
-            <h3>Kyoto : Capitale de la Sérénité</h3>
-            <div class="grid-2">
-                <div class="image-decor" style="background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=600');"></div>
-                <div class="text-rich white">
-                    <p>Kyoto, ancienne capitale impériale, est le cœur de la culture traditionnelle japonaise. Ses temples et jardins zen invitent à la contemplation. Les forêts de bambous d’Arashiyama offrent des promenades magiques. Kyoto est aussi célèbre pour ses festivals, comme le Gion Matsuri, qui célèbre l’histoire et l’artisanat local. Les maisons de thé et les kimonos traditionnels plongent les visiteurs dans une époque révolue. Kyoto est la ville idéale pour se reconnecter aux racines culturelles du Japon.</p>
-                </div>
-            </div>
-        </div>
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
 
-        <!-- Mont Fuji -->
-        <div id="fuji" class="sub-section">
-            <h3>Mont Fuji : Symbole Sacré</h3>
-            <div class="grid-2">
-                <div class="text-rich white">
-                    <p>Le Mont Fuji, sommet sacré du Japon, culmine à 3 776 mètres. Chaque année, des milliers de randonneurs tentent l’ascension pour admirer le lever du soleil "Goraiko". Le volcan est entouré de lacs et de forêts pittoresques. La montagne inspire peintres, poètes et photographes depuis des siècles. Fuji-san est un symbole national, représentant l’harmonie entre nature et spiritualité. Les légendes locales racontent que le mont abrite des esprits et des dieux bienveillants.</p>
-                </div>
-                <div class="image-decor" style="background-image: url('https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=600');"></div>
-            </div>
-        </div>
+nav ul li {
+    position: relative;
+}
 
-    </div>
-</section>
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+}
 
-<!-- ======================= GASTRONOMIE ======================= -->
-<section id="gastronomie" class="section-padding">
-    <div class="container">
-        <h2 class="big-title">Gastronomie Japonaise</h2>
+nav ul li a:hover {
+    background: #fdd835;
+    color: #000;
+    border-radius: 5px;
+}
 
-        <div class="sub-section">
-            <h3>Ramen et Street Food</h3>
-            <p>Le Ramen est un plat de nouilles emblématique du Japon, préparé dans un bouillon riche. Chaque région a sa spécialité : miso à Sapporo, tonkotsu à Fukuoka. Les ruelles d’Osaka offrent Takoyaki et Okonomiyaki préparés devant vous. La street-food est vivante et colorée. Les marchés alimentaires, appelés "Yatai", sont un lieu de découverte sensorielle. Manger au Japon est un art en soi.</p>
-        </div>
+/* ======================= SOUS-MENU ======================= */
+nav ul li ul.submenu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: rgba(0,0,0,0.9);
+    padding: 10px 0;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+    flex-direction: column;
+}
 
-        <div class="sub-section">
-            <h3>Sushi et Kaiseki</h3>
-            <p>Les sushis et sashimis nécessitent une maîtrise parfaite du couteau. Le Kaiseki est un dîner raffiné composé de plusieurs petits plats, respectant l’esthétique et la saisonnalité. Chaque assiette raconte une histoire. Les restaurants étoilés proposent une expérience gastronomique inoubliable. Le thé Matcha et le saké complètent le voyage culinaire. Le Japon élève la cuisine au rang de cérémonie.</p>
-        </div>
+nav ul li ul.submenu li {
+    width: 100%;
+}
 
-    </div>
-</section>
+nav ul li ul.submenu li a {
+    padding: 10px 20px;
+    width: 100%;
+}
 
-<!-- ======================= CULTURE GEEK ======================= -->
-<section id="culture" class="accent-bg section-padding">
-    <div class="container">
-        <h2 class="big-title">Culture Pop et Futurisme</h2>
+nav ul li:hover ul.submenu {
+    display: flex;
+}
 
-        <div class="sub-section">
-            <h3>Anime et Manga</h3>
-            <div class="grid-2">
-                <div class="image-decor culture-img"></div>
-                <div class="text-rich">
-                    <p>Le Japon est le berceau mondial de l’animation et des mangas. Des classiques comme "Dragon Ball", "Naruto" ou "One Piece" ont conquis le monde. Akihabara à Tokyo est le sanctuaire des collectionneurs de figurines et des jeux vidéo. Les événements comme le Comiket attirent des milliers de fans chaque année. Les studios d’animation produisent des œuvres aux visuels époustouflants. La culture Geek influence également la mode et le lifestyle au Japon.</p>
-                </div>
-            </div>
-        </div>
+/* ======================= SECTIONS ======================= */
+.section-padding {
+    padding: 80px 50px;
+}
 
-        <div class="sub-section">
-            <h3>Technologie et Futurisme</h3>
-            <p>Le Japon est à la pointe de la technologie : trains Shinkansen, robots d’accueil, villes intelligentes. Les innovations coexistent avec les traditions. Les toilettes high-tech ou les gadgets électroniques surprennent les visiteurs. La culture japonaise combine ainsi modernité extrême et héritage ancestral. Chaque quartier de Tokyo semble sorti d’un film futuriste. Les visites montrent un Japon où le passé et le futur dialoguent sans cesse.</p>
-        </div>
+.dark-bg {
+    background: #222;
+    color: #fff;
+}
 
-    </div>
-</section>
+.accent-bg {
+    background: #fdd835;
+    color: #000;
+}
 
-<!-- ======================= TRADITIONS ======================= -->
-<section id="traditions" class="section-padding">
-    <div class="container">
-        <h2 class="big-title">Traditions Japonaises</h2>
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
 
-        <div class="sub-section">
-            <h3>Cérémonie du Thé et Arts Martiaux</h3>
-            <div class="grid-2">
-                <div class="text-rich">
-                    <p>La cérémonie du thé est un art qui symbolise l’harmonie et le respect. Les arts martiaux comme le Kendo et le Judo enseignent discipline et concentration. Chaque geste est codifié et respecté depuis des siècles. Les écoles traditionnelles transmettent ces savoir-faire de génération en génération. La calligraphie et l’ikebana complètent l’éducation culturelle. Ces pratiques perpétuent l’âme du Japon traditionnel.</p>
-                </div>
-                <div class="image-decor traditions-img"></div>
-            </div>
-        </div>
+.big-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
 
-        <div class="sub-section">
-            <h3>Fêtes et Célébrations</h3>
-            <p>Le Japon célèbre de nombreuses fêtes traditionnelles. Hanami (fleurs de cerisier) attire des milliers de personnes chaque printemps. Obon honore les ancêtres et se déroule avec danses et lanternes flottantes. Le Nouvel An est un moment sacré pour se purifier et prier. Chaque région a ses festivals uniques. Les danses, costumes et rituels montrent la richesse culturelle. Ces événements sont vivants et participatifs, invitant visiteurs et locaux à se rencontrer.</p>
-        </div>
+.white {
+    color: #fff;
+}
 
-    </div>
-</section>
+/* ======================= SUB-SECTIONS ======================= */
+.sub-section {
+    margin-bottom: 60px;
+}
 
-<!-- ======================= GEOGRAPHIE ======================= -->
-<section id="geographie" class="dark-bg section-padding">
-    <div class="container">
-        <h2 class="big-title white">Géographie du Japon</h2>
+.sub-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
 
-        <div class="sub-section">
-            <h3>Archipel et Relief</h3>
-            <div class="grid-2">
-                <div class="text-rich white">
-                    <p>Le Japon est un archipel composé de 6852 îles, dont Honshu, Hokkaido, Kyushu et Shikoku. Les montagnes couvrent plus de 70 % du territoire, expliquant la densité urbaine concentrée sur les côtes. Le Mont Fuji domine le paysage et reste un symbole national. Les volcans et les rivières influencent la culture et la vie quotidienne. Les forêts et parcs nationaux protègent la biodiversité unique. La géographie varie de plages tropicales à des sommets enneigés.</p>
-                </div>
-                <div class="image-decor geo-img"></div>
-            </div>
-        </div>
+/* ======================= GRIDS ======================= */
+.grid-2 {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        <div class="sub-section">
-            <h3>Lacs, Côtes et Climat</h3>
-            <p>Le Japon possède des lacs pittoresques comme le Lac Kawaguchi et le Lac Biwa. Les côtes s’étendent sur 29 000 km et offrent ports, plages et paysages côtiers. Le climat varie du nord froid de Hokkaido au sud subtropical d’Okinawa. Les typhons et saisons influencent agriculture et vie quotidienne. La géographie maritime explique la richesse de la cuisine de la mer. Les îles sont reliées par des ponts, ferries et tunnels, facilitant le voyage et le commerce.</p>
-        </div>
+.text-rich {
+    flex: 1;
+}
 
-    </div>
-</section>
+.image-decor {
+    flex: 1;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
 
-<!-- ======================= CONTACT ======================= -->
-<section id="contact" class="section-padding">
-    <div class="container">
-        <h2 class="big-title">Préparez votre Expédition</h2>
-        <div class="contact-box">
-            <form>
-                <div class="input-group">
-                    <input type="text" placeholder="Nom Complet" required>
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <select>
-                    <option>Quelle est votre ville de destination ?</option>
-                    <option>Tokyo</option>
-                    <option>Kyoto</option>
-                    <option>Osaka</option>
-                </select>
-                <textarea rows="6" placeholder="Quels sont vos rêves pour ce voyage ?"></textarea>
-                <button type="submit" class="btn-main">Envoyer ma demande</button>
-            </form>
-        </div>
-    </div>
-</section>
+/* Images spécifiques */
+.culture-img {
+    background-image: url('https://images.unsplash.com/photo-1596128207005-3d64f67c86f7?auto=format&fit=crop&w=600');
+}
 
-<!-- ======================= FOOTER ======================= -->
-<footer>
-    <p>Japon Immersion &copy; 2026 - Tous droits réservés</p>
-</footer>
+.traditions-img {
+    background-image: url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=600');
+}
 
-</body>
-</html>
+.geo-img {
+    background-image: url('https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=600');
+}
+
+/* ======================= BUTTON ======================= */
+.btn-main {
+    display: inline-block;
+    background: #fdd835;
+    color: #000;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.btn-main:hover {
+    background: #ffc107;
+}
+
+/* ======================= CONTACT ======================= */
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-box input, .contact-box select, .contact-box textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.contact-box button {
+    cursor: pointer;
+}
+
+/* ======================= FOOTER ======================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #fff;
+}
+
+/* ======================= RESPONSIVE ======================= */
+@media(max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        position: fixed;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        transition: 0.3s;
+        padding: 20px;
+    }
+    nav ul li:hover ul.submenu {
+        position: static;
+    }
+    .grid-2 {
+        flex-direction: column;
+    }
+}
