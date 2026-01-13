@@ -1,12 +1,10 @@
+/* DESIGN LUXE ET COLORÉ */
 :root {
     --primary: #bc002d; /* Rouge Japon */
-    --secondary: #ff9e1b; /* Orange Soleil */
     --dark: #121212;
-    --light: #fdf6f0;
+    --light: #f4f4f4;
     --gold: #d4af37;
     --accent: #2d3436;
-    --gradient1: linear-gradient(135deg, #bc002d, #ff9e1b);
-    --gradient2: linear-gradient(135deg, #ff9e1b, #f0c27b);
 }
 
 * {
@@ -19,17 +17,17 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.8;
     color: #333;
-    background: var(--light);
+    background: #fff;
     overflow-x: hidden;
 }
 
-/* HERO */
+/* Header & Vidéo Background */
 .hero {
     height: 100vh;
     position: relative;
+    color: white;
     display: flex;
     flex-direction: column;
-    color: white;
 }
 
 .video-bg {
@@ -44,9 +42,9 @@ body {
 
 .video-bg iframe {
     width: 100vw;
-    height: 56.25vw;
+    height: 56.25vw; /* Ratio 16:9 */
     min-height: 100vh;
-    min-width: 177.77vh;
+    min-width: 177.77vh; /* Ratio 16:9 */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -75,7 +73,7 @@ nav {
 }
 
 .logo span {
-    color: var(--secondary);
+    color: var(--primary);
     margin-left: 10px;
 }
 
@@ -94,7 +92,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 .hero-title {
@@ -119,7 +117,7 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-/* SECTIONS */
+/* Utilitaires */
 .section-padding { padding: 100px 5%; }
 .container { max-width: 1200px; margin: auto; }
 .big-title {
@@ -127,47 +125,133 @@ nav ul li a:hover {
     font-size: 3.5rem;
     margin-bottom: 50px;
     text-align: center;
-    position: relative;
-    background: var(--gradient1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
-
+.big-title::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    background: var(--primary);
+    display: block;
+    margin: 15px auto;
+}
 .white { color: white; }
 .dark-bg { background: var(--dark); }
-.accent-bg { background: var(--secondary); color: white; }
-.gradient-bg { background: var(--gradient2); color: white; }
+.accent-bg { background: #fff5f5; }
 
-/* Typographie */
+/* Typographie Grand Format */
 .text-rich p {
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* Écrit gros */
     margin-bottom: 25px;
     text-align: justify;
 }
 
-/* GRID */
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-
-.image-decor img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 10px 10px 0 var(--primary);
-    transition: 0.5s;
+/* Grilles et Cartes */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
 }
 
-.image-decor img:hover {
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 0 0 50px var(--secondary);
-}
-
-/* CARTES */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .travel-card {
     background: #1e1e1e;
     border-radius: 15px;
-    overflow: hidd
+    overflow: hidden;
+    color: white;
+    transition: 0.4s;
+}
+
+.travel-card:hover { transform: scale(1.05); }
+
+.img-zoom { overflow: hidden; height: 250px; }
+.img-zoom img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.travel-card:hover img { transform: scale(1.2); }
+
+.card-info { padding: 25px; }
+
+/* Tableaux Modernes */
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    font-size: 1.2rem;
+}
+
+.modern-table th {
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+.modern-table td {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Formulaire Design */
+.contact-box {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #eee;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}
+
+.btn-main {
+    background: var(--primary);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    display: inline-block;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-main:hover {
+    background: var(--dark);
+    transform: translateY(-5px);
+}
+
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.image-decor img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .hero-title h1 { font-size: 3rem; }
+    .input-group { grid-template-columns: 1fr; }
+}
