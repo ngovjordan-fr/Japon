@@ -1,142 +1,236 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Luxe & Coloré</title>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root {
+    --primary: #bc002d; /* Rouge Japon */
+    --dark: #121212;
+    --light: #f4f4f4;
+    --gold: #d4af37;
+    --accent: #2d3436;
+}
 
-<!-- HERO -->
-<section class="hero">
-    <div class="video-bg">
-        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&loop=1&playlist=ScMzIvxBSi4" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="hero-overlay">
-        <nav>
-            <div class="logo">Luxe<span>Color</span></div>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hero-title">
-            <h1>LUXE & COLORÉ</h1>
-            <p>Découvrez un univers où le style rencontre l’audace des couleurs</p>
-            <a href="#services" class="btn-main">Voir Plus</a>
-        </div>
-    </div>
-</section>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<!-- SECTION IMAGE + TEXTE -->
-<section class="section-padding accent-bg">
-    <div class="container grid-2 text-rich">
-        <div>
-            <h2 class="big-title">Notre Vision</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.</p>
-            <p>Proin vel urna nec leo ullamcorper varius. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-        </div>
-        <div class="image-decor">
-            <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=80" alt="Image luxe coloré">
-        </div>
-    </div>
-</section>
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: #fff;
+    overflow-x: hidden;
+}
 
-<!-- CARTES COLORÉES -->
-<section class="section-padding dark-bg">
-    <div class="container">
-        <h2 class="big-title white">Nos Inspirations</h2>
-        <div class="card-grid">
-            <div class="travel-card">
-                <div class="img-zoom">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>Voyage Luxe</h3>
-                    <p>Des destinations exclusives et des expériences uniques pour nos clients.</p>
-                </div>
-            </div>
-            <div class="travel-card">
-                <div class="img-zoom">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>Design Coloré</h3>
-                    <p>Des créations éclatantes qui marient élégance et audace des couleurs.</p>
-                </div>
-            </div>
-            <div class="travel-card">
-                <div class="img-zoom">
-                    <img src="https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?auto=format&fit=crop&w=800&q=80" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>Évènements Prestigieux</h3>
-                    <p>Organisation d’évènements mémorables dans des lieux iconiques.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+/* Header & Vidéo Background */
+.hero {
+    height: 100vh;
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
 
-<!-- TABLEAU MODERNE -->
-<section class="section-padding accent-bg">
-    <div class="container">
-        <h2 class="big-title">Nos Offres</h2>
-        <table class="modern-table">
-            <thead>
-                <tr>
-                    <th>Pack</th>
-                    <th>Prix</th>
-                    <th>Détails</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Basique</td>
-                    <td>€499</td>
-                    <td>Accès aux services standards et support limité</td>
-                </tr>
-                <tr>
-                    <td>Premium</td>
-                    <td>€999</td>
-                    <td>Services avancés et accès prioritaire</td>
-                </tr>
-                <tr>
-                    <td>Prestige</td>
-                    <td>€1499</td>
-                    <td>Accompagnement complet + expériences exclusives</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
 
-<!-- FORMULAIRE CONTACT -->
-<section class="section-padding dark-bg">
-    <div class="container">
-        <h2 class="big-title white">Contactez-nous</h2>
-        <div class="contact-box">
-            <form>
-                <div class="input-group">
-                    <input type="text" placeholder="Nom" required>
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <input type="text" placeholder="Sujet">
-                <textarea placeholder="Votre message" rows="5"></textarea>
-                <button type="submit" class="btn-main">Envoyer</button>
-            </form>
-        </div>
-    </div>
-</section>
+.video-bg iframe {
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
 
-<!-- FOOTER -->
-<footer>
-    &copy; 2026 Luxe & Coloré. Tous droits réservés.
-</footer>
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
-</body>
-</html>
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo span { color: var(--primary); margin-left: 10px; }
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--primary); }
+
+.hero-title {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+}
+
+.hero-title p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Sections */
+.section-padding { padding: 100px 5%; }
+.container { max-width: 1200px; margin: auto; }
+.big-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+.big-title::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    background: var(--primary);
+    display: block;
+    margin: 15px auto;
+}
+
+.white { color: white; }
+.dark-bg { background: var(--dark); }
+.accent-bg { background: #fff5f5; }
+
+/* Contenu Texte Large */
+.text-rich p {
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.image-decor img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--primary);
+    transition: 0.5s;
+}
+
+.image-decor img:hover {
+    transform: translate(10px, 10px);
+    box-shadow: 0px 0px 0 var(--primary);
+}
+
+/* Cartes */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.travel-card {
+    background: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    color: white;
+    transition: 0.4s;
+}
+
+.travel-card:hover { transform: scale(1.05); }
+.img-zoom { overflow: hidden; height: 250px; }
+.img-zoom img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.card-info { padding: 25px; }
+
+/* Tableaux */
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.modern-table th {
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+.modern-table td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Boutons et Formulaire */
+.btn-main {
+    background: var(--primary);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    display: inline-block;
+    transition: 0.3s;
+    border: none;
+}
+
+.btn-main:hover { background: var(--dark); transform: translateY(-5px); }
+
+.contact-box {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+footer { background: var(--dark); color: white; text-align: center; padding: 50px; }
