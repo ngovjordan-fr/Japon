@@ -2,40 +2,134 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Voyage au Japon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Japon : Entre Tradition et Modernité</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <h1>🌸 Voyage au Japon 🌸</h1>
-    <p>Découvrez la beauté et la culture japonaise</p>
-</header>
+    <header>
+        <div class="video-container">
+            <video autoplay muted loop id="bg-video">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-tokyo-city-traffic-at-night-4751-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="overlay">
+            <nav>
+                <div class="logo">日本 JAPON</div>
+                <ul>
+                    <li><a href="#histoire">Histoire</a></li>
+                    <li><a href="#visites">Visites</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li><a href="#conseils">Conseils</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hero-text">
+                <h1>Découvrez l'Empire du Soleil Levant</h1>
+                <p>Un voyage inoubliable entre sanctuaires millénaires et gratte-ciels futuristes.</p>
+            </div>
+        </div>
+    </header>
 
-<section class="video">
-    <h2>🎥 Une aventure incroyable</h2>
-    <!-- Vidéo YouTube intégrée -->
-    <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/Scxs7L0vhZ4"
-        title="Découverte du Japon"
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
-</section>
+    <section id="histoire" class="container">
+        <h2 class="section-title">Histoire du Japon</h2>
+        <div class="content-flex">
+            <div class="text">
+                <p>L'histoire du Japon est une épopée fascinante qui s'étend sur des millénaires. De l'époque **Jomon** à l'ère moderne **Reiwa**, le pays a su préserver son identité unique tout en s'ouvrant au monde.</p>
+                <p>Le Japon a été marqué par l'influence des Samouraïs, l'élégance de la période Edo et une reconstruction spectaculaire après 1945, devenant aujourd'hui un leader technologique mondial.</p>
+            </div>
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=600" alt="Temple Japonais">
+            </div>
+        </div>
+    </section>
 
-<section class="images">
-    <h2>📸 Les plus beaux endroits</h2>
-    <div class="gallery">
-        <img src="images/montfuji.jpg" alt="Mont Fuji">
-        <img src="images/sakura.jpg" alt="Cerisiers en fleurs">
-        <img src="images/tokyo.jpg" alt="Tokyo">
-    </div>
-</section>
+    <section id="visites" class="dark-section">
+        <div class="container">
+            <h2 class="section-title">Lieux Incontournables</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400" alt="Kyoto">
+                    <h3>Kyoto</h3>
+                    <p>La ville aux mille temples et les jardins zen de Gion.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1540959733332-e94e1b389e7a?auto=format&fit=crop&w=400" alt="Tokyo">
+                    <h3>Tokyo</h3>
+                    <p>Le cœur battant du pays, entre Shinjuku et Shibuya.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=400" alt="Mont Fuji">
+                    <h3>Mont Fuji</h3>
+                    <p>Le symbole sacré du Japon, majestueux et éternel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="culture">
-    <h2>🍱 Culture & Traditions</h2>
-    <p>Le Japon est riche en traditions, gastronomie et festivals. Explorez les temples anciens, les jardins zen et la cuisine locale.</p>
-</section>
+    <section id="restaurants" class="container">
+        <h2 class="section-title">Top 3 des Restaurants</h2>
+        <table class="resto-table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Spécialité</th>
+                    <th>Lieu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>**Sukiyabashi Jiro**</td>
+                    <td>Sushi d'exception</td>
+                    <td>Tokyo (Ginza)</td>
+                </tr>
+                <tr>
+                    <td>**Ichiran Ramen**</td>
+                    <td>Tonkotsu Ramen</td>
+                    <td>Partout au Japon</td>
+                </tr>
+                <tr>
+                    <td>**Kikunoi**</td>
+                    <td>Cuisine Kaiseki</td>
+                    <td>Kyoto</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-<footer>
-    <p>© 2026 - Site HTML & CSS sur le Japon | GitHub Pages</p>
+    <section id="conseils" class="accent-section">
+        <div class="container">
+            <h2 class="section-title">Conseils d'Experts</h2>
+            <ul>
+                <li><strong>JR Pass :</strong> Indispensable pour voyager en train de manière illimitée.</li>
+                <li><strong>Étiquette :</strong> Ne jamais planter ses baguettes dans le riz.</li>
+                <li><strong>Internet :</strong> Louez un "Pocket WiFi" dès votre arrivée à l'aéroport.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2 class="section-title">Préparez votre voyage</h2>
+        <div class="form-container">
+            <form>
+                <input type="text" placeholder="Votre Nom" required>
+                <input type="email" placeholder="Votre Email" required>
+                <select>
+                    <option value="">Saison préférée ?</option>
+                    <option value="printemps">Printemps (Cerisiers)</option>
+                    <option value="automne">Automne (Érables)</option>
+                </select>
+                <textarea placeholder="Votre message ou questions..."></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Passion Japon - Explorez l'Orient</p>
+    </footer>
+
+</body>
+</html>
